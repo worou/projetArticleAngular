@@ -1,0 +1,32 @@
+<div class="row">
+  <form [formGroup]="form" (ngSubmit)="create()" class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="Titre" id="titre" formControlName="titre" type="text" class="validate">
+        <label for="titre">Titre</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="auteur" type="text" formControlName="auteur" class="validate">
+        <label for="auteur">Auteur</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input value="" id="url" formControlName="url" type="text" class="validate">
+        <label for="url">Url</label>
+      </div>
+    </div>
+     <div class="row">
+       <div class="input-field col s12">
+         <textarea id="contenu" formControlName="contenu" class="materialize-textarea"></textarea>
+         <label for="textarea1">Contenu</label>
+       </div>
+     </div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Soumettre
+      <i class="material-icons right">send</i>
+    </button>
+    
+  </form>
+
+  {{form.value | json}}
+</div>

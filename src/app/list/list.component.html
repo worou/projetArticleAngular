@@ -1,0 +1,33 @@
+<a routerLink="/add" class="waves-effect waves-light btn right #e65100 orange darken-4">Ajouter</a>
+
+<table id="table_id" class="responsive-table striped">
+  <thead class="white-text #546e7a blue-grey darken-1">
+    <tr>
+      <th>#</th>
+      <th>Titre</th>
+      <th>Contenu</th>
+      <th>Parution</th>
+      <th>Url</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let article of articles">
+      <td>{{article.id}}</td>
+      <td>{{article.titre}}</td>
+      <td>{{article.contenu}}</td>
+      <td>{{article.parution}}</td>
+      <td><img src="{{article.url}}"/></td>
+      <td>
+        <a routerLink="/article/{{article.id}}"
+          class="waves-effect waves-light btn right #e65100 green">Edit</a>
+        <a routerLink="/articles/{{article.id}}" class="waves-effect waves-light btn right red">Supprimer</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  list works!
+  {{articles|json}}
+</p>
